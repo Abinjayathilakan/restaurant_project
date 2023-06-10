@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/e749e7d924.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;800&display=swap');
+        :root{
+            --green: #27ae60;
+            --black:#192a56;
+            --light-color: #666;
+            --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+        }
+        *{
+            font-family: 'Nunito', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            outline: none;
+            border: none;
+            text-transform: capitalize;
+            transition: all .2s linear;
+        }
+        html{
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-padding-top: 5.5rem;
+            scroll-behavior: smooth;
+        }
+        header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #fff;
+            padding: 1rem 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1000;
+            box-shadow: var(--box-shadow);
+        }
+        header .logo{
+            color: var(--black);
+            font-size: 2.5rem;
+            font-weight: bolder;
+        }
+        header .logo i{
+            color: var(--green);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo"><i class="fas fa-utensils"></i>coffe bite</a>
+        <nav class="navbar">
+            <a href="#home">home</a>
+            <a href="#dishes">dishes</a>
+            <a href="#about">about </a>
+            <a href="#pages">pages</a>
+            <a href="#blog">blog</a>
+            <a href="#contact">contact</a>
+        </nav>
+    </header>
+    
+    <div class="icons">
+        <i class="fas fa-bars" id="bars"></i>
+        <i class="fas fa-search" id="search-icons"></i>
+        <a href="#" class="fas fa-heart"></a>
+        <a href="#" class="fas fa-shopping-cart"></a>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
