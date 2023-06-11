@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    
     <script src="https://kit.fontawesome.com/e749e7d924.js" crossorigin="anonymous"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;800&display=swap');
@@ -33,6 +35,23 @@
             scroll-padding-top: 5.5rem;
             scroll-behavior: smooth;
         }
+        section{
+            padding: 2rem 9%;
+        }
+        section:nth-child(even){
+            background-color: #eee;
+        }
+        .btn{
+            margin-top: 1rem;
+            display: inline-block;
+            font-size: 1.7rem;
+            color: #fff;
+            background: var(--black);
+            border-radius: .5rem;
+            cursor: pointer;
+            padding: .8rem 3rem;
+        }
+
         header{
             position: fixed;
             top: 0;
@@ -53,14 +72,89 @@
         }
         header .logo i{
             color: var(--green);
+            font-size: 5.5rem;
         }
+        header .navbar a{
+            font-size: 1.7rem;
+            border-radius: .5rem;
+            padding: .5rem 1.5rem;
+            color: var(--light-color);
+
+        }
+        header .navbar a.active,
+        header .navbar a:hover{
+            color: #fff;
+            background: var(--green);
+        }
+        header .icons i ,
+        header .icons a{
+            cursor: pointer;
+            margin-left: .5rem;
+            height: 4.5rem;
+            line-height: 4.5rem;
+            width: 4.5rem;
+            text-align: center;
+            font-size: 1.7rem;
+            color: var(--black);
+            border-radius: 50%;
+            background: #eee;
+        }
+        @media (max-width:991px){
+            html{
+                font-size: 55%;
+            }
+
+            header{
+                padding: 1rem 2rem;
+                
+            }
+        }
+        @media (max-width:991px){
+            
+        }
+
+
+
+.home .home-slider .slide{
+   display: flex;
+   align-items: center;
+   flex-wrap: wrap;
+   gap: 2rem;
+   padding-top: 9rem;
+
+}
+.home .home-slider .slide .content{
+    flex: 1 1 45rem;
+}
+.home .home-slider .slide .image{
+    flex: 1 1 45rem;
+}
+.home .home-slider .slide .image img{
+    width: 100%;
+}
+.home .home-slider .slide .content span{
+    color: var(--green);
+    font-size: 3.5rem;
+}
+.home .home-slider .slide .content h3{
+    color: var(--black);
+    font-size: 5.5rem;
+}
+.home .home-slider .slide .content p{
+    color: var(--light-color);
+    font-size: 2rem;
+    padding: .5rem 0;
+    line-height: 1.5;
+}
+
+
     </style>
 </head>
 <body>
     <header>
-        <a href="#" class="logo"><i class="fas fa-utensils"></i>coffe bite</a>
+        <a href="#" class="logo"><i class="fas fa-utensils"></i> coffe bite</a>
         <nav class="navbar">
-            <a href="#home">home</a>
+            <a class="active" href="#home">home</a>
             <a href="#dishes">dishes</a>
             <a href="#about">about </a>
             <a href="#pages">pages</a>
@@ -76,6 +170,68 @@
         <a href="#" class="fas fa-shopping-cart"></a>
     </div>
 
+    <section class="home" id="home">
+        <div class="swiper-container home-slider">
+            <div class="swiper-wrapper wrapper">
+
+                <div class="swiper-slide slide">
+                    <div class="content">
+                        <span>our special dish</span>
+                        <h3>spicy noodles</h3>
+                        <p>happpy customer ho kayaa</p>
+                        <a href="#" class="btn">Order now</a>
+                    </div>
+                    <div class="image">
+                        <img src="https://images.unsplash.com/photo-1512152272829-e3139592d56f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="">
+                    </div>
+                </div>
+
+                <div class="swiper-slide slide">
+                    <div class="content">
+                        <span>our special dish</span>
+                        <h3>fried chicken</h3>
+                        <p>happpy customer ho kayaa</p>
+                        <a href="#" class="btn">Order now</a>
+                    </div>
+                    <div class="image">
+                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9vZHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                    </div>
+                </div>
+
+                <div class="swiper-slide slide">
+                    <div class="content">
+                        <span>our special dish</span>
+                        <h3>pizza</h3>
+                        <p>happpy customer ho kayaa</p>
+                        <a href="#" class="btn">Order now</a>
+                    </div>
+                    <div class="image">
+                        <img src="https://images.unsplash.com/photo-1530375930097-e957738bc0e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Zm9vZCUyMGluJTIwcGxhdGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                    </div>
+                </div>
+
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
+    <script>
+        var swiper = new Swiper(".home-slider", {
+          spaceBetween: 30,
+          centeredSlides: true,
+          autoplay: {
+            delay: 7500,
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+        loop:true,
+        });
+      </script>
 </body>
 </html>
