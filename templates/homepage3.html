@@ -1,0 +1,1167 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>restaurant website Html Css</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://kit.fontawesome.com/e749e7d924.js" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet"
+  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Josefin Sans', sans-serif;
+	list-style: none;
+	text-decoration: none;
+	scroll-behavior: smooth;
+}
+:root{
+	--bg-color: #ffffff;
+	--second-color: #f54300;
+	--main-color: #7dd87d;
+	--text-color: #130849;
+	--light-color: #666;
+	--border-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+	--other-color: #999fb9;
+	--big-font: 4.8rem;
+	--h2-font: 3.2rem;
+	--p-font: 1rem;
+}
+body{
+	color: var(--text-color);
+	background: white;
+}
+header{
+	position: fixed;
+	width: 100%;
+	right: 0;
+	top: 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: transparent;
+	padding: 25px 18%;
+	z-index: 1000;
+	transition: all .35s ease;
+}
+.logo img{
+	max-width: 100%;
+	width: 150px;
+	height: auto;
+}
+.navbar{
+	display: flex;
+	align-items: center;
+}
+.navbar a{
+	font-size: var(--p-font);
+	color: var(--text-color);
+	padding: 10px 28px;
+	font-weight: 700;
+	transition: all .35s ease;
+}
+.navbar a:hover{
+	color: var(--main-color);
+}
+.navbar a.active{
+	color: var(--main-color);
+}
+.navbar a.cart{
+	font-size: 30px;
+}
+#menu-icon{
+	color: var(--text-color);
+	font-size: 40px;
+	z-index: 10001;
+	cursor: pointer;
+	display: none;
+}
+.top-btn a{
+	display: inline-block;
+	background: var(--text-color);
+	color: #fff;
+	padding: 17px 32px;
+	border-radius: 30px;
+	border: none;
+	font-size: 17px;
+	font-weight: 700;
+}
+
+section{
+	padding: 80px 18%;
+}
+.home{
+	height: 90vh;
+	width: 100%;
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	align-items: center;
+	grid-gap: 3rem;
+    background-image: url('https://i.pinimg.com/236x/d8/9a/72/d89a72c4c4fc5fb7a088108de4db2778.jpg');
+}
+.home-text h1{
+	margin: 20px 0px 20px;
+	font-size: var(--big-font);
+	line-height: 1.1;
+}
+.home-text h3{
+	color: var(--second-color);
+	font-size: 35px;
+	font-weight: 600;
+}
+.home-text p{
+	font-size: var(--p-font);
+	color: var(--other-color);
+	line-height: 27px;
+	font-weight: 400;
+	margin-bottom: 30px;
+	font-family: 'Open Sans', sans-serif;
+}
+.btn{
+	display: inline-block;
+	background: var(--main-color);
+	color: #fff;
+	padding: 17px 32px;
+	border-radius: 30px;
+	border: none;
+	font-size: 17px;
+	font-weight: 700;
+	transition: all .25s ease;
+}
+.btn:hover{
+	box-shadow: 0px 15px 22px rgb(125 216 125 / 44%);
+}
+.home-img img{
+	width: 100%;
+	height: auto;
+}
+
+.about{
+	background: url();
+	background-size: cover;
+	background-position: center;
+	display: grid;
+	grid-template-columns: repeat(2, 2fr);
+	align-items: center;
+	grid-gap: 3rem;
+}
+.about-img img{
+	width: 100%;
+	height: auto;
+	padding-top: 80px;
+}
+.about-text h2{
+	margin: 15px 0px 15px;
+	font-size: var(--h2-font);
+	line-height: 1.1;
+}
+.about-text h3{
+	color: var(--second-color);
+	font-size: 35px;
+	font-weight: 600;
+}
+.about-text p{
+	font-size: var(--p-font);
+	color: var(--other-color);
+	line-height: 27px;
+	font-weight: 400;
+	margin-bottom: 30px;
+	font-family: 'Open Sans', sans-serif;
+}
+.about-text h1{
+	color: #8B1874;
+	font-size: 35px;
+	font-weight: 600;
+}
+.about .icons-container{
+	display: flex;
+	gap: 1rem;
+	flex-wrap: wrap;
+	padding: 1rem 0;
+	margin-top: .5rem;
+}
+.about .icons-container .icons{
+	background: #eee;
+	border-radius: .5rem;
+	border: .1rem solid rgba(0, 0, 0, .2);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+	flex: 1 1 17rem;
+	padding: 1.5rem 1rem;
+}
+.about .icons-container .icons i{
+	font-size: 2.5rem;
+	color: green;
+}
+.about .icons-container .icons span{
+	font-size: 1.5rem;
+	color: black;
+}
+
+
+
+
+
+
+
+
+header.sticky{
+	background: #fff;
+	padding: 12px 18%;
+	box-shadow: 0px 0px 1px #13084982;
+}
+.center-text{
+	text-align: center;
+}
+.center-text h2{
+	margin: 15px 0px 0px;
+	font-size: var(--h2-font);
+	line-height: 1.1;
+}
+.center-text h3{
+	color: var(--second-color);
+	font-size: 35px;
+	font-weight: 600;
+}
+.menu-content{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+	grid-gap: 2rem;
+	align-items: center;
+	margin-top: 4.5rem;
+	cursor: pointer;
+}
+.box{
+	padding: 15px 50px 15px 50px;
+	background: var(--bg-color);
+	box-shadow: 0px 5px 40px rgb(19 8 73 / 13%);
+	border-radius: 20px;
+	transition: all .40s ease;
+}
+.box-content{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+}
+.box-img img{
+	width: 100%;
+	height: auto;
+}
+.box-text h4{
+	color: var(--text-color);
+	font-size: 28px;
+	font-weight: 700;
+	margin-bottom: 10px;
+}
+.box-text p{
+	font-size: var(--p-font);
+	color: var(--other-color);
+	font-weight: 400;
+	margin-bottom: 15px;
+	font-family: 'Open Sans', sans-serif;
+}
+.box-text span{
+	color: var(--second-color);
+	font-size: 25px;
+	font-weight: 600;
+}
+.box:hover{
+	transform: scale(1.04) translateY(-5px);
+}
+.box-btn{
+	text-align: center;
+	margin-top: 5rem;
+}
+.box .btn{
+	display: inline-block;
+	background: var(--main-color);
+	color: #fff;
+	padding: 17px 32px;
+	border-radius: 30px;
+	border: none;
+	font-size: 17px;
+	font-weight: 700;
+	transition: all .25s ease;
+}
+.box .btn:hover{
+	box-shadow: 0px 15px 22px rgba(137, 125, 216, 0.44);
+}
+
+
+
+
+
+
+.review .slide {
+	padding: 2rem;
+	box-shadow: var(--box-shadow);
+	border: 0.1rem solid rgba(0, 0, 0, 0.2);
+	background-color: #ffffff;
+	position: relative;
+}
+
+.review .slide .fa-quote-right{
+	position: absolute;
+	top: 2rem;
+	right: 2rem;
+	font-size: 6rem;
+	color: #ccc;
+}
+.review .slide .user{
+	display: flex;
+	gap: 1.5rem;
+	align-items: center;
+	padding-bottom: 1.5rem;
+}
+.review .slide .user img{
+	height: 7rem;
+	width: 7rem;
+	border-radius: 50%;
+	object-fit: cover;
+}
+.review .slide .user h3{
+	color: black;
+	font-size: 2rem;
+	padding-bottom: .5rem;
+}
+.review .slide .user i{
+	font-size: 1.3rem;
+	color: green;
+}
+.review .slide p{
+	font-size: 1.5rem;
+	line-height: 1.8;
+	color: var(--light-color);
+}
+
+
+
+
+
+.team-content{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+	grid-gap: 2rem;
+	align-items: center;
+	margin-top: 6rem;
+	cursor: pointer;
+	text-align: center;
+}
+.row{
+	padding: 28px 30px;
+	background: var(--bg-color);
+	box-shadow: 0px 5px 40px rgb(19 8 73 / 13%);
+	border-radius: 20px;
+	transition: all .40s ease;
+}
+.team-img img{
+	height: 120px;
+	width: 120px;
+	object-fit: cover;
+	border-radius: 50%;
+	border: 7px solid var(--main-color);
+	margin-bottom: 25px;
+}
+.row h4{
+	font-size: 22px;
+	font-weight: 700;
+	color: var(--text-color);
+	margin-bottom: 7px;
+}
+.row p{
+	font-size: var(--p-font);
+	color: var(--other-color);
+	font-weight: 400;
+	margin-bottom: 25px;
+	font-family: 'Open Sans', sans-serif;
+	letter-spacing: 1px;
+}
+.team-icon i{
+	display: inline-block;
+	width: 37px;
+	height: 37px;
+	background: var(--bg-color);
+	color: var(--text-color);
+	border: 2px solid var(--main-color);
+	border-radius: 50%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 20px;
+	margin: 0 7px;
+	transition: all .40s ease;
+}
+.team-icon i:hover{
+	transform: scale(1.2);
+	background: var(--main-color);
+	color: #fff;
+}
+.row:hover{
+	transform: scale(1.04) translateY(-5px);
+}
+
+.container{
+	padding: 70px 80px;
+	box-shadow: 0px 5px 40px rgb(19 8 73 / 13%);
+	border-radius: 20px;
+}
+.newsletter-content{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 40px;
+}
+.news-text h2{
+	margin: 15px 0px 15px;
+	font-size: var(--h2-font);
+	line-height: 1.1;
+}
+.news-text h3{
+	color: var(--second-color);
+	font-size: 30px;
+	font-weight: 600;
+}
+.news-text p{
+	font-size: var(--p-font);
+	color: var(--other-color);
+	font-weight: 400;
+	line-height: 30px;
+	font-family: 'Open Sans', sans-serif;
+}
+.letter form{
+	position: relative;
+	width: 350px;
+	max-width: 100%;
+}
+.letter form input:first-child{
+	display: inline-block;
+	width: 100%;
+	padding: 16px 130px 16px 15px;
+	border: 2px solid var(--main-color);
+	outline: none;
+	border-radius: 30px;
+}
+.letter form input:last-child{
+	position: absolute;
+	display: inline-block;
+	outline: none;
+	border: none;
+	padding: 17px 30px;
+	border-radius: 30px;
+	background: var(--main-color);
+	color: #fff;
+	top: 1px;
+	right: 1px;
+	cursor: pointer;
+}
+
+.blog{
+	background: url(../img/blog.svg);
+	background-size: cover;
+	background-position: center left;
+}
+.blog-content{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+	grid-gap: 2rem;
+	align-items: center;
+	margin-top: 6rem;
+	cursor: pointer;
+	border-radius: 20px;
+}
+.main{
+	padding: 0px 0px 10px 0px;
+	border-radius: 20px;
+	box-shadow: 0px 5px 40px rgb(19 8 73 / 13%);
+	transition: all .40s ease;
+}
+.blog-content img{
+	width: 100%;
+	height: 320px;
+	object-fit: cover;
+	border-radius: 20px 20px 0px 0px;
+}
+.blog-text{
+	padding: 20px 15px;
+}
+.blog-text h6{
+	font-size: 13px;
+	font-weight: 400;
+	color: var(--other-color);
+	margin-bottom: 15px;
+}
+.blog-text h4{
+	font-size: 19px;
+	line-height: 1.2;
+	font-weight: 700;
+	color: var(--text-color);
+	margin-bottom: 10px;
+	transition: all .30s ease;
+}
+.blog-text p{
+	font-size: var(--p-font);
+	color: var(--other-color);
+	font-weight: 400;
+	line-height: 30px;
+	font-family: 'Open Sans', sans-serif;
+	margin-bottom: 20px;
+}
+.blog-btn{
+	display: flex;
+	align-items: center;
+}
+.blog-btn a{
+	font-size: var(--p-font);
+	color: var(--main-color);
+	margin-right: 10px;
+}
+.blog-btn i{
+	font-size: 19px;
+	color: var(--main-color);
+}
+.blog-text h4:hover{
+	color: var(--main-color);
+}
+.main:hover{
+	transform: scale(1.04) translateY(-5px);
+}
+
+.contact{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+	grid-gap: 2rem;
+}
+.contact-box h3{
+	margin-bottom: 1.5rem;
+	font-size: 22px;
+}
+.contact-box h5{
+	font-size: 16px;
+	font-weight: 600;
+	color: var(--other-color);
+}
+.social{
+	display: flex;
+	margin-top: 1.7rem;
+}
+.social i{
+	font-size: 24px;
+	margin-right: 1rem;
+	color: var(--main-color);
+	transition: all .40s ease;
+}
+.social i:hover{
+	transform: scale(1.3);
+}
+.contact-box li{
+	margin-bottom: 14px;
+}
+.contact-box li a{
+	display: block;
+	color: var(--other-color);
+	font-size: var(--p-font);
+	font-weight: 600;
+	transition: all .35s ease;
+}
+.contact-box li a:hover{
+	transform: translateX(10px);
+	color: var(--main-color);
+}
+.address{
+	display: flex;
+	flex-direction: column;
+}
+.address i{
+	margin-bottom: 0.8rem;
+	font-size: 1.1rem;
+	color: var(--main-color);
+}
+.address span{
+	margin-left: 1rem;
+	color: var(--other-color);
+}
+
+.end-text{
+	text-align: center;
+}
+.end-text p{
+	color: var(--other-color);
+	font-size: 15px;
+	letter-spacing: 2px;
+	padding: 20px;
+}
+
+@media (max-width: 1640px){
+	.home{
+		height: 80vh;
+		padding-top: 100px;
+	}
+	header{
+		padding: 14px 3%;
+		transition: .3s;
+	}
+	header.sticky{
+		padding: 10px 3%;
+		transition: .3s;
+	}
+	section{
+		padding: 70px 3%;
+		transition: .3s;
+	}
+}
+
+@media (max-width: 1110px){
+	#menu-icon{
+		display: block;
+	}
+	.top-btn{
+		display: none;
+	}
+	.navbar{
+		position: absolute;
+		top: -700px;
+		left: 0;
+		right: 0;
+		flex-direction: column;
+		background: #fff;
+		align-items: flex-start;
+		box-shadow: 0px 0px 1px #13084982;
+		transition: all .40s ease;
+	}
+	.navbar a{
+		display: block;
+		padding: 0.8rem;
+		margin: 0.5rem;
+	}
+	.navbar.open{
+		top: 100%;
+	}
+}
+
+@media (max-width: 1090px){
+	:root{
+		--big-font: 3.7rem;
+		--h2-font: 2.6rem;
+		--p-font: 1rem;
+		transition: .3s;
+	}
+}
+
+@media (max-width: 880px){
+	.home{
+		height: 75vh;
+		padding-top: 100px;
+	}
+	section{
+		padding: 80px 3%;
+	}
+	:root{
+		--big-font: 3.2rem;
+		--h2-font: 2.2rem;
+	}
+}
+
+@media (max-width: 760px){
+	.home{
+		grid-template-columns: 1fr;
+		height: 100vh;
+		grid-gap: 1rem;
+	}
+	.home-text{
+		text-align: center;
+	}
+	.home-img{
+		text-align: center;
+	}
+	.home-img img{
+		width: 400px;
+		max-width: 100%;
+		height: auto;
+	}
+	.about{
+		grid-template-columns: 1fr;
+		grid-gap: 1rem;
+	}
+	.about-text{
+		text-align: center;
+	}
+	.about-img{
+		order: 2;
+		text-align: center;
+	}
+	.about-img img{
+		padding-top: 0px;
+	}
+	section{
+		padding: 65px 3%;
+		transition: .3s;
+	}
+	.letter form{
+		width: 250px;
+	}
+}
+header .logo{
+    color: var(--black);
+    font-size: 2.5rem;
+    font-weight: bolder;
+}
+  </style>
+
+</head>
+<body>
+
+	<!---header--->
+	<header>
+        <a href="#" class="logo"><i class="fas fa-utensils"></i> coffe bite</a>
+		<!-- <a href="#" class="logo"><img style="height: 80px;" src="data:image/jpeg;base64,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" style="height: 50px;"></a> -->
+		<div class="bx bx-menu" id="menu-icon"></div>
+
+		<ul class="navbar">
+			<li><a href="#home" class="active">Home</a></li>
+			<li><a href="#about">About Us</a></li>
+			<li><a href="#menu">Menu</a></li>
+			<li><a href="#review">Review</a></li>
+			<li><a href="#blog">Blog</a></li>
+			<li><a href="#contact">Contact</a></li>
+			<li><a href="#" class="cart"><i class='bx bxs-cart-download'></i></a></li>
+		</ul>
+
+		<div class="top-btn">
+			<a href="#">Order Now</a>
+		</div>
+	</header>
+<br><br><br><br><br><br>
+	<!---home--->
+	<section class="home" id="home">
+        
+		<div class="home-text">
+			<h3>Welcome</h3>
+			<h1>Enjoy The Organic Food</h1>
+			<p> it is an art form that stimulates our senses, <br> nourishes our bodies, and brings people together</p>
+			<a href="#" class="btn">Order Now</a>
+		</div>
+        
+
+		<div class="home-img">
+			<img src="https://media.istockphoto.com/id/520410807/photo/cheeseburger.webp?b=1&s=170667a&w=0&k=20&c=pjrnICUVnoZHiq4KuKpleDIqCd0y-9-F_if6JTwwxJc=">
+		</div>
+        
+	</section>
+
+
+	<!---about--->
+	<section class="about" id="about">
+		<div class="about-img">
+			<img src="https://plus.unsplash.com/premium_photo-1661335232234-fc25c7f03151?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fHJlc3RhdXJhbnQlMjBzdGFmZnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60">
+		</div>
+
+		<div class="about-text">
+			<h3>About Us</h3>
+			
+			<h2>Food Restaurant</h2>
+			<p>Food is a reflection of culture, history, and creativity. It is through food that we can explore different cuisines and discover the unique ingredients, techniques</p>
+			<h1>WHY CHOOSE US ?</h1>
+			<div class="icons-container">
+				<div class="icons">
+					<i class="fas fa-shipping-fast"></i>
+					<span>free delivery</span>
+				</div>
+				<div class="icons">
+					<i class="fas fa-dollar-sign"></i>
+					<span>easy payments</span>
+				</div>
+				<div class="icons">
+					<i class="fas fa-headset"></i>
+					<span>24/7 services</span>
+				</div>
+			</div>
+			<a href="#" class="btn">Learn more</a>
+		</div>
+
+	</section>
+
+	<!---food menu--->
+	<section class="menu" id="menu">
+		<div class="center-text">
+			<h3>Food Menu</h3>
+			<h2>Delicious food</h2>
+		</div>
+
+		<div class="menu-content">
+			<div class="box">
+				<div class="box-content">
+					<div class="box-img">
+						<img src="https://images.unsplash.com/photo-1553909489-cd47e0907980?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGZvb2QlMjBtZW51fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60">
+					</div>
+
+					<div class="box-text">
+						<h4>Spaghetti Bolognese</h4>
+						<p>A classic Italian dish consisting of pasta</p>
+						<span>$32</span>
+						<a href="#" class="btn btn-primary">Add to cart</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="box">
+				<div class="box-content">
+					<div class="box-img">
+						<img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YnVyZ2VyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60">
+					</div>
+
+					<div class="box-text">
+						<h4>Burger</h4>
+						<p>A Japanese delicacy made with vinegared rice</p>
+						<span>$32</span>
+						<a href="#" class="btn btn-primary">Add to cart</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="box">
+				<div class="box-content">
+					<div class="box-img">
+						<img src="https://images.unsplash.com/photo-1612939675110-fe3a0129a024?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Zm9vZCUyMG1lbnV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60">
+					</div>
+
+					<div class="box-text">
+						<h4>Chicken Tikka Masala</h4>
+						<p>A popular Indian dish consisting of marinated and grilled</p>
+						<span>$32</span>
+						<a href="#" class="btn">Add to cart</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="box">
+				<div class="box-content">
+					<div class="box-img">
+						<img src="https://images.unsplash.com/photo-1604908177453-7462950a6a3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGZvb2QlMjBtZW51fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60">
+					</div>
+
+					<div class="box-text">
+						<h4>Chocolate Brownie</h4>
+						<p>A rich and indulgent dessert made with chocolate</p>
+						<span>$32</span>
+						<a href="#" class="btn">Add to cart</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="box">
+				<div class="box-content">
+					<div class="box-img">
+						<img src="https://images.unsplash.com/photo-1594998893017-36147cbcae05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fG1lYWx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60">
+					</div>
+
+					<div class="box-text">
+						<h4>Caesar Salad</h4>
+						<p> A classic salad made with romaine lettuce</p>
+						<span>$32</span>
+						<a href="#" class="btn">Add to cart</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="box">
+				<div class="box-content">
+					<div class="box-img">
+						<img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHBhc3RhfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60">
+					</div>
+
+					<div class="box-text">
+						<h4>Sam Crow</h4>
+						<p> A classic salad made with romaine lettuce</p>
+						<span>$32</span>
+						<a href="#" class="btn">Add to cart</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="box">
+				<div class="box-content">
+					<div class="box-img">
+						<img src="https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c3RlYWt8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60">
+					</div>
+
+					<div class="box-text">
+						<h4>Sushi</h4>
+						<p> A classic salad made with romaine lettuce</p>
+						<span>$32</span>
+						<a href="#" class="btn">Add to cart</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="box">
+				<div class="box-content">
+					<div class="box-img">
+						<img src="https://images.unsplash.com/photo-1542528180-a1208c5169a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzl8fGZvb2QlMjBtZW51fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60">
+					</div>
+
+					<div class="box-text">
+						<h4>Margherita Pizza</h4>
+						<p>A traditional Italian pizza topped with tomato sauce.</p>
+						<span>$32</span>
+						<a href="#" class="btn">Add to cart</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+
+
+
+	<section class="review" id="review">
+		<!-- <h3 class="sub-heading"> customer's review</h3> -->
+		<h1 class="heading"> Customer Review</h1>
+
+	<div class="swiper review-slider">
+		<div class="swiper-wrapper">
+
+			<div class="swiper-slide box">
+				<i class="fas fa-quote-right"></i>
+				<div class="user">
+					<img src="https://i.pinimg.com/236x/70/ea/10/70ea1032277354c7878becd8bcbf8e43.jpg" alt="">
+					<div class="user-info">
+						<h3>john deo</h3>
+						<div class="stars">
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star-half-alt"></i>
+						</div>
+
+					</div>
+				</div>
+				<p>
+					I recently had the pleasure of dining at [Restaurant Name], and I must say that the food exceeded all my expectations. From the moment I entered, the ambiance was inviting and the staff was welcoming.
+				</p>
+			</div>
+
+			<div class="swiper-slide slide">
+				<i class="fas fa-quote-right"></i>
+				<div class="user">
+					<img src="https://i.pinimg.com/236x/70/ea/10/70ea1032277354c7878becd8bcbf8e43.jpg" alt="">
+					<div class="user-info">
+						<h3>john deo</h3>
+						<div class="stars">
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star-half-alt"></i>
+						</div>
+
+					</div>
+				</div>
+				<p>
+					I recently had the pleasure of dining at [Restaurant Name], and I must say that the food exceeded all my expectations. From the moment I entered, the ambiance was inviting and the staff was welcoming.
+				</p>
+			</div>
+
+			<div class="swiper-slide slide">
+				<i class="fas fa-quote-right"></i>
+				<div class="user">
+					<img src="https://i.pinimg.com/236x/70/ea/10/70ea1032277354c7878becd8bcbf8e43.jpg" alt="">
+					<div class="user-info">
+						<h3>john deo</h3>
+						<div class="stars">
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star-half-alt"></i>
+						</div>
+
+					</div>
+				</div>
+				<p>
+					I recently had the pleasure of dining at [Restaurant Name], and I must say that the food exceeded all my expectations. From the moment I entered, the ambiance was inviting and the staff was welcoming.
+				</p>
+			</div>
+
+			<div class="swiper-slide slide">
+				<i class="fas fa-quote-right"></i>
+				<div class="user">
+					<img src="https://i.pinimg.com/236x/70/ea/10/70ea1032277354c7878becd8bcbf8e43.jpg" alt="">
+					<div class="user-info">
+						<h3>john deo</h3>
+						<div class="stars">
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star-half-alt"></i>
+						</div>
+
+					</div>
+				</div>
+				<p>
+					I recently had the pleasure of dining at [Restaurant Name], and I must say that the food exceeded all my expectations. From the moment I entered, the ambiance was inviting and the staff was welcoming.
+				</p>
+			</div>
+
+			<div class="swiper-slide slide">
+				<i class="fas fa-quote-right"></i>
+				<div class="user">
+					<img src="https://i.pinimg.com/236x/70/ea/10/70ea1032277354c7878becd8bcbf8e43.jpg" alt="">
+					<div class="user-info">
+						<h3>john deo</h3>
+						<div class="stars">
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star-half-alt"></i>
+						</div>
+
+					</div>
+				</div>
+				<p>
+					I recently had the pleasure of dining at [Restaurant Name], and I must say that the food exceeded all my expectations. From the moment I entered, the ambiance was inviting and the staff was welcoming.
+				</p>
+			</div>
+
+			<div class="swiper-slide slide">
+				<i class="fas fa-quote-right"></i>
+				<div class="user">
+					<img src="https://i.pinimg.com/236x/70/ea/10/70ea1032277354c7878becd8bcbf8e43.jpg" alt="">
+					<div class="user-info">
+						<h3>john deo</h3>
+						<div class="stars">
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star-half-alt"></i>
+						</div>
+
+					</div>
+				</div>
+				<p>
+					I recently had the pleasure of dining at [Restaurant Name], and I must say that the food exceeded all my expectations. From the moment I entered, the ambiance was inviting and the staff was welcoming.
+				</p>
+			</div>
+
+
+			<div class="swiper-slide slide">
+				<i class="fas fa-quote-right"></i>
+				<div class="user">
+					<img src="https://i.pinimg.com/236x/70/ea/10/70ea1032277354c7878becd8bcbf8e43.jpg" alt="">
+					<div class="user-info">
+						<h3>john deo</h3>
+						<div class="stars">
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star-half-alt"></i>
+						</div>
+
+					</div>
+				</div>
+				<p>
+					I recently had the pleasure of dining at [Restaurant Name], and I must say that the food exceeded all my expectations. From the moment I entered, the ambiance was inviting and the staff was welcoming.
+				</p>
+			</div>
+
+			<div class="swiper-slide slide">
+				<i class="fas fa-quote-right"></i>
+				<div class="user">
+					<img src="https://i.pinimg.com/236x/70/ea/10/70ea1032277354c7878becd8bcbf8e43.jpg" alt="">
+					<div class="user-info">
+						<h3>john deo</h3>
+						<div class="stars">
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star-half-alt"></i>
+						</div>
+
+					</div>
+				</div>
+				<p>
+					I recently had the pleasure of dining at [Restaurant Name], and I must say that the food exceeded all my expectations. From the moment I entered, the ambiance was inviting and the staff was welcoming.
+				</p>
+			</div>
+
+
+
+		</div>
+	</div>
+
+	</section>
+
+
+
+	<script type="text/javascript" src="js/script.js"></script>
+    <script>
+        
+const header = document.querySelector("header");
+
+window.addEventListener ("scroll", function() {
+	header.classList.toggle ("sticky", window.scrollY > 0);
+});
+
+let menu = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
+
+menu.onclick = () => {
+	menu.classList.toggle('bx-x');
+	navbar.classList.toggle('open');
+};
+
+window.onscroll = () => {
+	menu.classList.remove('bx-x');
+	navbar.classList.remove('open');
+};
+    </script>
+	<script>
+        var swiper = new Swiper(".review-slider", {
+		  loop:true,			
+          spaceBetween: 20,
+          
+          autoplay: {
+            delay: 7500,
+            disableOnInteraction: false,
+          },
+       
+		breakpoints:{
+			0: {
+				slidesPerView: 1,
+			},
+			
+			768: {
+				slidesPerView: 2,
+			},
+			1024: {
+				slidesPerView: 3,
+			},
+		},
+        });
+      </script>
+
+</body>
+</html>
