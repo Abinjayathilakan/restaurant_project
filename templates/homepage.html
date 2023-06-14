@@ -1,237 +1,1409 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
-    
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Foodies</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="https://kit.fontawesome.com/e749e7d924.js" crossorigin="anonymous"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;800&display=swap');
-        :root{
-            --green: #27ae60;
-            --black:#192a56;
-            --light-color: #666;
-            --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
-        }
-        *{
-            font-family: 'Nunito', sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            text-decoration: none;
-            outline: none;
-            border: none;
-            text-transform: capitalize;
-            transition: all .2s linear;
-        }
-        html{
-            font-size: 62.5%;
-            overflow-x: hidden;
-            scroll-padding-top: 5.5rem;
-            scroll-behavior: smooth;
-        }
-        section{
-            padding: 2rem 9%;
-        }
-        section:nth-child(even){
-            background-color: #eee;
-        }
-        .btn{
-            margin-top: 1rem;
-            display: inline-block;
-            font-size: 1.7rem;
-            color: #fff;
-            background: var(--black);
-            border-radius: .5rem;
-            cursor: pointer;
-            padding: .8rem 3rem;
-        }
 
-        header{
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: #fff;
-            padding: 1rem 7%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            z-index: 1000;
-            box-shadow: var(--box-shadow);
-        }
-        header .logo{
-            color: var(--black);
-            font-size: 2.5rem;
-            font-weight: bolder;
-        }
-        header .logo i{
-            color: var(--green);
-            font-size: 5.5rem;
-        }
-        header .navbar a{
-            font-size: 1.7rem;
-            border-radius: .5rem;
-            padding: .5rem 1.5rem;
-            color: var(--light-color);
+	<link rel="stylesheet"
+  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
 
-        }
-        header .navbar a.active,
-        header .navbar a:hover{
-            color: #fff;
-            background: var(--green);
-        }
-        header .icons i ,
-        header .icons a{
-            cursor: pointer;
-            margin-left: .5rem;
-            height: 4.5rem;
-            line-height: 4.5rem;
-            width: 4.5rem;
-            text-align: center;
-            font-size: 1.7rem;
-            color: var(--black);
-            border-radius: 50%;
-            background: #eee;
-        }
-        @media (max-width:991px){
-            html{
-                font-size: 55%;
-            }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Josefin Sans', sans-serif;
+	list-style: none;
+	text-decoration: none;
+	scroll-behavior: smooth;
+}
+:root{
+	--bg-color: #ffffff;
+	--second-color: #f54300;
+	--main-color: #7dd87d;
+	--text-color: #130849;
+	--light-color: #666;
+	--border-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+	--other-color: #999fb9;
+	--big-font: 4.8rem;
+	--h2-font: 3.2rem;
+	--p-font: 1rem;
+	
+}
+body{
+	color: var(--text-color);
+	
+}
+header{
+	position: fixed;
+	width: 100%;
+	right: 0;
+	top: 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: transparent;
+	padding: 25px 18%;
+	z-index: 1000;
+	transition: all .35s ease;
+}
+.logo img{
+	max-width: 100%;
+	width: 150px;
+	height: auto;
+}
+.navbar{
+	display: flex;
+	align-items: center;
+}
+.navbar a{
+	font-size: var(--p-font);
+	color: var(--text-color);
+	padding: 10px 28px;
+	font-weight: 700;
+	transition: all .35s ease;
+}
+.navbar a:hover{
+	color: var(--main-color);
+}
+.navbar a.active{
+	color: var(--main-color);
+}
+.navbar a.cart{
+	font-size: 30px;
+}
+#menu-icon{
+	color: var(--text-color);
+	font-size: 40px;
+	z-index: 10001;
+	cursor: pointer;
+	display: none;
+}
+.top-btn a{
+	display: inline-block;
+	background: var(--text-color);
+	color: #fff;
+	padding: 17px 32px;
+	border-radius: 30px;
+	border: none;
+	font-size: 17px;
+	font-weight: 700;
+}
 
-            header{
-                padding: 1rem 2rem;
-                
-            }
-        }
-        @media (max-width:991px){
-            
-        }
+section{
+	padding: 80px 18%;
+}
+.home{
+	height: 90vh;
+	width: 100%;
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	align-items: center;
+	grid-gap: 3rem;
+	color: var(--light-color);
+    background-image: url('https://i.pinimg.com/236x/d8/9a/72/d89a72c4c4fc5fb7a088108de4db2778.jpg');
+}
+.home-text h1{
+	margin: 20px 0px 20px;
+	font-size: var(--big-font);
+	line-height: 1.1;
+}
+.home-text h3{
+	color: var(--second-color);
+	font-size: 35px;
+	font-weight: 600;
+}
+.home-text p{
+	font-size: var(--p-font);
+	color: var(--other-color);
+	line-height: 27px;
+	font-weight: 400;
+	margin-bottom: 30px;
+	font-family: 'Open Sans', sans-serif;
+}
+.btn{
+	display: inline-block;
+	background: var(--main-color);
+	color: #fff;
+	padding: 17px 32px;
+	border-radius: 30px;
+	border: none;
+	font-size: 17px;
+	font-weight: 700;
+	transition: all .25s ease;
+}
+.btn:hover{
+	box-shadow: 0px 15px 22px rgb(125 216 125 / 44%);
+}
+.home-img img{
+	width: 100%;
+	height: auto;
+}
+
+.about{
+	
+	background-size: cover;
+	background-position: center;
+	display: grid;
+	grid-template-columns: repeat(2, 2fr);
+	align-items: center;
+	grid-gap: 3rem;
+	color: #434343;
+}
+.about-img img{
+	width: 100%;
+	height: auto;
+	padding-top: 80px;
+}
+.about-text h2{
+	margin: 15px 0px 15px;
+	font-size: var(--h2-font);
+	line-height: 1.1;
+}
+.about-text h3{
+	color: var(--second-color);
+	font-size: 35px;
+	font-weight: 600;
+}
+.about-text p{
+	font-size: var(--p-font);
+	color: var(--other-color);
+	line-height: 27px;
+	font-weight: 400;
+	margin-bottom: 30px;
+	font-family: 'Open Sans', sans-serif;
+}
+.about-text h1{
+	color: #8B1874;
+	font-size: 35px;
+	font-weight: 600;
+}
+.about .icons-container{
+	display: flex;
+	gap: 1rem;
+	flex-wrap: wrap;
+	padding: 1rem 0;
+	margin-top: .5rem;
+}
+.about .icons-container .icons{
+	background: #eee;
+	border-radius: .5rem;
+	border: .1rem solid rgba(0, 0, 0, .2);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+	flex: 1 1 17rem;
+	padding: 1.5rem 1rem;
+}
+.about .icons-container .icons i{
+	font-size: 2.5rem;
+	color: green;
+}
+.about .icons-container .icons span{
+	font-size: 1.5rem;
+	color: black;
+}
 
 
 
-.home .home-slider .slide{
-   display: flex;
-   align-items: center;
-   flex-wrap: wrap;
-   gap: 2rem;
-   padding-top: 9rem;
+
+
+
+
+
+header.sticky{
+	background: #fff;
+	padding: 12px 18%;
+	box-shadow: 0px 0px 1px #13084982;
+	
+}
+.center-text{
+	text-align: center;
+}
+.center-text h2{
+	margin: 15px 0px 0px;
+	font-size: var(--h2-font);
+	line-height: 1.1;
+}
+.center-text h3{
+	color: var(--second-color);
+	font-size: 35px;
+	font-weight: 600;
+}
+.menu-content{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+	grid-gap: 2rem;
+	align-items: center;
+	margin-top: 4.5rem;
+	cursor: pointer;
+	background-color: #fff;
+	
+}
+.box{
+	padding: 15px 50px 15px 50px;
+	background: var(--bg-color);
+	box-shadow: 0px 5px 40px rgb(19 8 73 / 13%);
+	border-radius: 20px;
+	transition: all .40s ease;
+}
+.box-content{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+}
+.box-img img{
+	width: 100%;
+	height: auto;
+}
+.box-text h4{
+	color: var(--text-color);
+	font-size: 28px;
+	font-weight: 700;
+	margin-bottom: 10px;
+}
+.box-text p{
+	font-size: var(--p-font);
+	color: var(--other-color);
+	font-weight: 400;
+	margin-bottom: 15px;
+	font-family: 'Open Sans', sans-serif;
+}
+.box-text span{
+	color: var(--second-color);
+	font-size: 25px;
+	font-weight: 600;
+}
+.box:hover{
+	transform: scale(1.04) translateY(-5px);
+}
+.box-btn{
+	text-align: center;
+	margin-top: 5rem;
+}
+.box .btn{
+	display: inline-block;
+	background: var(--main-color);
+	color: #fff;
+	padding: 17px 32px;
+	border-radius: 30px;
+	border: none;
+	font-size: 17px;
+	font-weight: 700;
+	transition: all .25s ease;
+}
+.box .btn:hover{
+	box-shadow: 0px 15px 22px rgba(137, 125, 216, 0.44);
+}
+
+.section .about{
+	background-color: #F9F5F6;
+}
+
+
+
+
+<!-- .banner{
+
+	.row-banner{
+		background-image: url(https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Zm9vZHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=900&q=60) no-repeat;
+		height: 40rem;
+		background-size: cover;
+		background-position: center;
+		position: relative;
+
+		.content{
+			position: absolute;
+			top: 50%;
+			left: 7%;
+			transform: translateY(-50%);
+
+			span{
+				@include font(4rem);
+				color: black;
+			}
+			h3{
+				font-size: 6rem;
+				color: red;
+				text-transform: uppercase;
+			}
+			p{
+				font-size: 2rem;
+				padding-bottom: 1rem;
+			}
+		}
+	}
+	.grid-banner{
+		@include grid(30rem);
+
+		.grid{
+			position: relative;
+			border-radius: 1rem;
+			overflow: hidden;
+			height: 45rem;
+
+			&:hover img{
+				transform: scale(1.2);
+			}
+			img{
+				height: 100%;
+				width: 100%;
+				object-fit: cover;
+			}
+			.content{
+				position: absolute;
+				top: 2rem;
+				padding:0 2rem ;
+
+				&.center{
+					text-align: center;
+					width: 100%;
+
+					span{
+						color: #8B1874;
+					}
+
+					h3{
+						color: black;
+					}
+				}
+
+				span{
+					font-size: 2.5rem;
+					color: white;
+				}
+				h3{
+					font-size: 2.5rem;
+					color: white;
+				}
+
+			}
+
+		}
+	}
+}
+ -->
+
+
+
+
+
+
+.testimonials{
+	padding: 40px 0;
+	background: #f1f1f1;
+	color: #434343;
+	text-align: center;	
+}
+.inner{
+	max-width: 1200px;
+	margin: auto;
+	overflow: hidden;
+	padding:0 20px ;
 
 }
-.home .home-slider .slide .content{
-    flex: 1 1 45rem;
+.border{
+	width: 160px;
+	height: 5px;
+	background: #6ab04c;
+	margin: 26px auto;
+
+}.row{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }
-.home .home-slider .slide .image{
-    flex: 1 1 45rem;
+.col{
+	flex: 33.33%;
+	max-width: 33.33%;
+	box-sizing: border-box;
+	padding: 15px;
 }
-.home .home-slider .slide .image img{
-    width: 100%;
+.testimonial{
+	background: #fff;
+	padding: 30px;
 }
-.home .home-slider .slide .content span{
-    color: var(--green);
-    font-size: 3.5rem;
+.testimonial img{
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+
 }
-.home .home-slider .slide .content h3{
+.name{
+	font-size: 20px;
+	text-transform: capitalize;
+	margin: 20px 0;
+}
+.stars{
+	color: #6ab04c;
+	margin-bottom: 20px;
+}
+
+@media screen and (max-width:960px){
+	.col{
+		flex:100%;
+		max-width: 80%;
+	}
+	
+}
+@media screen and (max-width:600px){
+	.col{
+		flex:100%;
+		max-width: 100%;
+	}
+	
+}
+
+
+
+
+.card-slider-container {
+	width: 100%;
+	overflow: hidden;
+  }
+  
+  .swiper-slide {
+	width: 100%;
+  }
+  
+  .review-card {
+	background-color: #f5f5f5;
+	padding: 20px;
+	border-radius: 8px;
+  }
+  
+  .username {
+	font-size: 18px;
+	margin-bottom: 10px;
+  }
+  
+  .review {
+	font-size: 14px;
+	margin-bottom: 10px;
+  }
+  
+  .rating {
+	font-size: 18px;
+	font-weight: bold;
+	background-color: aqua;
+	border-radius: 3rem;
+  }
+  
+  .avatar img {
+	  width: 100px; /* Adjust the width as per your preference */
+	  height: 100px; /* Adjust the height as per your preference */
+	  border-radius: 50%;
+	  object-fit: cover;
+	}
+	.stars{
+	  color: orange;
+	  font-size: 1rem;
+	}
+	.review .review-slider{
+	  border: 1px solid;
+	  padding: 1rem;
+	}
+	.review .review-slider .box{
+	  border: 0px solid red;
+	  background-color: #fff;
+	  border-radius: .5rem;
+	  text-align: center;
+	  padding: 3rem 2rem;
+	  outline-offset: -1rem;
+	  outline: var(--outline);
+	  box-shadow: var(--box-shadow);
+	  transition: .2s linear;
+	}
+	.review .review-slider .box :hover{
+	  box-shadow: 1px 1px 10px 4px var(--green);
+	}
+	.review .review-slider .box img{
+	  height: 10rem;
+	  width: 10rem;
+	  border-radius: 50%;
+	}
+	.review .review-slider .box p{
+	  padding: 1rem 0;
+	  line-height: 1.8;
+	  color: var(--light-color);
+	  font-size: 1.5rem;
+	}
+	.review .review-slider .box h3{
+	  padding-bottom: .5rem;
+	  color: var(--black);
+	  font-size: 2.2rem;
+	}
+	.review .review-slider .box .stars i{
+	  color: orange;
+	  font-size: 1.7rem;
+	}
+	.row .text h2{
+		margin: 15px 0px 0px;
+		font-size: var(--h2-font);
+		line-height: 1.1;
+	}
+	.row .text h1{
+		color: var(--second-color);
+		font-size: 35px;
+		font-weight: 600;
+	}
+
+
+	.order .row{
+		padding: 2rem;
+		box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+		background: #fff;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1.5rem;
+		background-color: #F9F5F6;
+		border-radius: .5rem;
+	}
+	.order .row .image{
+		flex: 1 1 30rem;
+	}
+	.order .row .image img{
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+		border-radius: .5rem;
+	}
+	.order .row form{
+		flex: 1 1 50rem;
+		padding: 1rem;
+	}
+	.order .row form .inputBox{
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+	.order .row form .inputBox input, .order .row form textarea{
+		padding: 1rem;
+		margin: 1rem 0;
+		font-size: 1.7rem;
+		color: #333;
+		text-transform: none;
+		border: .1rem solid rgba(0, 0, 0, .3);
+		border-radius: .5rem;
+		width: 49%;
+	}
+	.order .row form textarea{
+		width: 100%;
+		resize: none;
+		height: 15rem;
+	}
+	
+	.order .row form .btn:hover{
+		background: var(--second-color);
+	}
+
+	.order {
+		.icons-container {
+			@include grid(30rem);
+			margin-bottom: 2rem;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+	
+		.icons {
+			border-radius: .5rem;
+			padding: 2rem;
+			text-align: center;
+		}
+	
+		h3 {
+			font-size: 2.2rem;
+			color: black;
+			margin-top: .5rem;
+		}
+	}
+	
+	.icons-container .icons img {
+		height: 50px;
+		width: 50px;
+	}
+
+
+
+
+
+	.footer .container{
+		max-width: 1170px;
+		margin:auto;
+	}
+	.footer .row{
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.footer ul{
+		list-style: none;
+	}
+	
+	.footer{
+		background-color: #24262b;
+		padding: 70px 0;
+	}
+	.footer-col{
+	   width: 25%;
+	   padding: 0 15px;
+	}
+	.footer-col h4{
+		font-size: 18px;
+		color: #ffffff;
+		text-transform: capitalize;
+		margin-bottom: 35px;
+		font-weight: 500;
+		position: relative;
+	}
+	.footer-col h4::before{
+		content: '';
+		position: absolute;
+		left:0;
+		bottom: -10px;
+		background-color: #e91e63;
+		height: 2px;
+		box-sizing: border-box;
+		width: 50px;
+	}
+	.footer-col ul li:not(:last-child){
+		margin-bottom: 10px;
+	}
+	.footer-col ul li a{
+		font-size: 16px;
+		text-transform: capitalize;
+		color: #ffffff;
+		text-decoration: none;
+		font-weight: 300;
+		color: #bbbbbb;
+		display: block;
+		transition: all 0.3s ease;
+	}
+	.footer-col ul li a:hover{
+		color: #ffffff;
+		padding-left: 8px;
+	}
+	.footer-col .social-links a{
+		display: inline-block;
+		height: 40px;
+		width: 40px;
+		background-color: rgba(255,255,255,0.2);
+		margin:0 10px 10px 0;
+		text-align: center;
+		line-height: 40px;
+		border-radius: 50%;
+		color: #ffffff;
+		transition: all 0.5s ease;
+	}
+	.footer-col .social-links a:hover{
+		color: #24262b;
+		background-color: #ffffff;
+	}
+	
+	/*responsive*/
+	@media(max-width: 768px){
+	  .footer-col{
+		width: 50%;
+		margin-bottom: 30px;
+	}
+	}
+	@media(max-width: 574px){
+	  .footer-col{
+		width: 100%;
+	}
+	}
+
+
+
+
+
+
+
+
+.main:hover{
+	transform: scale(1.04) translateY(-5px);
+}
+
+.contact{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+	grid-gap: 2rem;
+	background-color: black;
+}
+.contact-box h3{
+	margin-bottom: 1.5rem;
+	font-size: 22px;
+	color: white;
+}
+.contact-box h5{
+	font-size: 16px;
+	font-weight: 600;
+	color: white;
+}
+.social{
+	display: flex;
+	margin-top: 1.7rem;
+}
+.social i{
+	font-size: 24px;
+	margin-right: 1rem;
+	color: white;
+	transition: all .40s ease;
+}
+.social i:hover{
+	transform: scale(1.3);
+	color: green;
+}
+.contact-box li{
+	margin-bottom: 14px;
+
+}
+.contact-box li a{
+	display: block;
+	color: white;
+	font-size: var(--p-font);
+	font-weight: 600;
+	transition: all .35s ease;
+}
+.contact-box li a:hover{
+	transform: translateX(10px);
+	color: var(--main-color);
+}
+.address{
+	display: flex;
+	flex-direction: column;
+}
+.address i{
+	margin-bottom: 0.8rem;
+	font-size: 1.1rem;
+	color: white;
+}
+.address span{
+	margin-left: 1rem;
+	color: white;
+}
+
+.end-text{
+	text-align: center;
+	background-color: black;
+}
+.end-text p{
+	color: var(--other-color);
+	font-size: 15px;
+	letter-spacing: 2px;
+	padding: 20px;
+}
+
+@media (max-width: 1640px){
+	.home{
+		height: 80vh;
+		padding-top: 100px;
+	}
+	header{
+		padding: 14px 3%;
+		transition: .3s;
+	}
+	header.sticky{
+		padding: 10px 3%;
+		transition: .3s;
+	}
+	section{
+		padding: 70px 3%;
+		transition: .3s;
+	}
+}
+
+@media (max-width: 1110px){
+	#menu-icon{
+		display: block;
+	}
+	.top-btn{
+		display: none;
+	}
+	.navbar{
+		position: absolute;
+		top: -700px;
+		left: 0;
+		right: 0;
+		flex-direction: column;
+		background: #fff;
+		align-items: flex-start;
+		box-shadow: 0px 0px 1px #13084982;
+		transition: all .40s ease;
+	}
+	.navbar a{
+		display: block;
+		padding: 0.8rem;
+		margin: 0.5rem;
+	}
+	.navbar.open{
+		top: 100%;
+	}
+}
+
+@media (max-width: 1090px){
+	:root{
+		--big-font: 3.7rem;
+		--h2-font: 2.6rem;
+		--p-font: 1rem;
+		transition: .3s;
+	}
+}
+
+@media (max-width: 880px){
+	.home{
+		height: 75vh;
+		padding-top: 100px;
+	}
+	section{
+		padding: 80px 3%;
+	}
+	:root{
+		--big-font: 3.2rem;
+		--h2-font: 2.2rem;
+	}
+}
+
+@media (max-width: 760px){
+	.home{
+		grid-template-columns: 1fr;
+		height: 100vh;
+		grid-gap: 1rem;
+	}
+	.home-text{
+		text-align: center;
+	}
+	.home-img{
+		text-align: center;
+	}
+	.home-img img{
+		width: 400px;
+		max-width: 100%;
+		height: auto;
+	}
+	.about{
+		grid-template-columns: 1fr;
+		grid-gap: 1rem;
+	}
+	.about-text{
+		text-align: center;
+	}
+	.about-img{
+		order: 2;
+		text-align: center;
+	}
+	.about-img img{
+		padding-top: 0px;
+	}
+	section{
+		padding: 65px 3%;
+		transition: .3s;
+	}
+	.letter form{
+		width: 250px;
+	}
+}
+header .logo{
     color: var(--black);
-    font-size: 5.5rem;
+    font-size: 2.5rem;
+    font-weight: bolder;
 }
-.home .home-slider .slide .content p{
-    color: var(--light-color);
-    font-size: 2rem;
-    padding: .5rem 0;
-    line-height: 1.5;
-}
+  </style>
 
-
-    </style>
 </head>
 <body>
-    <header>
-        <a href="#" class="logo"><i class="fas fa-utensils"></i> coffe bite</a>
-        <nav class="navbar">
-            <a class="active" href="#home">home</a>
-            <a href="#dishes">dishes</a>
-            <a href="#about">about </a>
-            <a href="#pages">pages</a>
-            <a href="#blog">blog</a>
-            <a href="#contact">contact</a>
-        </nav>
-    </header>
-    
-    <div class="icons">
-        <i class="fas fa-bars" id="bars"></i>
-        <i class="fas fa-search" id="search-icons"></i>
-        <a href="#" class="fas fa-heart"></a>
-        <a href="#" class="fas fa-shopping-cart"></a>
-    </div>
 
-    <section class="home" id="home">
-        <div class="swiper-container home-slider">
-            <div class="swiper-wrapper wrapper">
+	<!---header--->
+	<header>
+        <a href="#" class="logo"><i class="fas fa-utensils"></i> Foodies</a>
+		<!-- <a href="#" class="logo"><img style="height: 80px;" src="data:image/jpeg;base64,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" style="height: 50px;"></a> -->
+		<div class="bx bx-menu" id="menu-icon"></div>
 
-                <div class="swiper-slide slide">
-                    <div class="content">
-                        <span>our special dish</span>
-                        <h3>spicy noodles</h3>
-                        <p>happpy customer ho kayaa</p>
-                        <a href="#" class="btn">Order now</a>
-                    </div>
-                    <div class="image">
-                        <img src="https://images.unsplash.com/photo-1512152272829-e3139592d56f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="">
-                    </div>
-                </div>
+		<ul class="navbar">
+			<li><a href="#home" >Home</a></li>
+			<li><a href="#about">About Us</a></li>
+			<li><a href="#menu">Menu</a></li>
+			<li><a href="#review">Review</a></li>
+			<!-- <!-- <li><a href="#blog">Blog</a></li> -->
+			<li><a href="#contact">Contact</a></li>
+			<!-- <li><a href="#" class="cart"><i class='bx bxs-cart-download'></i></a></li> -->
+		</ul>
 
-                <div class="swiper-slide slide">
-                    <div class="content">
-                        <span>our special dish</span>
-                        <h3>fried chicken</h3>
-                        <p>happpy customer ho kayaa</p>
-                        <a href="#" class="btn">Order now</a>
-                    </div>
-                    <div class="image">
-                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9vZHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
-                    </div>
-                </div>
+		<div class="top-btn">
+			<a href="#order">Order Now</a>
+		</div>
+	</header>
+<br><br><br><br><br><br>
+	<!---home--->
+	<section class="home" id="home" style="color: var(--light-color);" >
+        
+		<div class="home-text">
+			<h3>Welcome</h3>
+			<h1>Enjoy The Organic Food</h1>
+			<p> it is an art form that stimulates our senses, <br> nourishes our bodies, and brings people together</p>
+			<a href="#menu" class="btn">Order Now</a>
+		</div>
+        
 
-                <div class="swiper-slide slide">
-                    <div class="content">
-                        <span>our special dish</span>
-                        <h3>pizza</h3>
-                        <p>happpy customer ho kayaa</p>
-                        <a href="#" class="btn">Order now</a>
-                    </div>
-                    <div class="image">
-                        <img src="https://images.unsplash.com/photo-1530375930097-e957738bc0e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Zm9vZCUyMGluJTIwcGxhdGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="">
-                    </div>
-                </div>
+		<div class="home-img">
+			<img src="https://cdn.sanity.io/images/czqk28jt/prod_bk_us/b8498af088c766cdaee4b005060de94df66d2d49-749x336.png?w=1125&q=90&fit=max&auto=format">
+		</div>
+        
+	</section>
 
-            </div>
-            <div class="swiper-pagination"></div>
-        </div>
 
-    </section>
+	<!---about--->
+	<section class="about" id="about">
+		<div class="about-img">
+			<img src="https://plus.unsplash.com/premium_photo-1661335232234-fc25c7f03151?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fHJlc3RhdXJhbnQlMjBzdGFmZnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60">
+		</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+		<div class="about-text">
+			<h3>About Us</h3>
+			
+			<h2>Food Restaurant</h2>
+			<p>Food is a reflection of culture, history, and creativity. It is through food that we can explore different cuisines and discover the unique ingredients, techniques</p>
+			<h1>WHY CHOOSE US ?</h1>
+			<div class="icons-container">
+				<div class="icons">
+					<i class="fas fa-shipping-fast"></i>
+					<span>free delivery</span>
+				</div>
+				<div class="icons">
+					<i class="fas fa-dollar-sign"></i>
+					<span>easy payments</span>
+				</div>
+				<div class="icons">
+					<i class="fas fa-headset"></i>
+					<span>24/7 services</span>
+				</div>
+			</div>
+			<a href="#" class="btn">Learn more</a>
+		</div>
+
+	</section>
+
+	<!---food menu--->
+	<section class="menu" id="menu">
+		<div class="center-text">
+			<h3>Food Menu</h3>
+			<h2>Delicious food</h2>
+		</div>
+
+		<div class="menu-content">
+			<div class="box">
+				<div class="box-content">
+					<div class="box-img">
+						<img src="https://images.unsplash.com/photo-1553909489-cd47e0907980?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGZvb2QlMjBtZW51fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60">
+					</div>
+
+					<div class="box-text">
+						<h4>Spaghetti Bolognese</h4>
+						<p>A classic Italian dish consisting of pasta</p>
+						<span>$32</span>
+						<a href="#" class="btn btn-primary">Add to cart</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="box">
+				<div class="box-content">
+					<div class="box-img">
+						<img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YnVyZ2VyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60">
+					</div>
+
+					<div class="box-text">
+						<h4>Burger</h4>
+						<p>A Japanese delicacy made with vinegared rice</p>
+						<span>$32</span>
+						<a href="#" class="btn btn-primary">Add to cart</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="box">
+				<div class="box-content">
+					<div class="box-img">
+						<img src="https://images.unsplash.com/photo-1612939675110-fe3a0129a024?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Zm9vZCUyMG1lbnV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60">
+					</div>
+
+					<div class="box-text">
+						<h4>Chicken Tikka Masala</h4>
+						<p>A popular Indian dish consisting of marinated and grilled</p>
+						<span>$32</span>
+						<a href="#" class="btn">Add to cart</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="box">
+				<div class="box-content">
+					<div class="box-img">
+						<img src="https://images.unsplash.com/photo-1604908177453-7462950a6a3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGZvb2QlMjBtZW51fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60">
+					</div>
+
+					<div class="box-text">
+						<h4>Chocolate Brownie</h4>
+						<p>A rich and indulgent dessert made with chocolate</p>
+						<span>$32</span>
+						<a href="#" class="btn">Add to cart</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="box">
+				<div class="box-content">
+					<div class="box-img">
+						<img src="https://images.unsplash.com/photo-1594998893017-36147cbcae05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fG1lYWx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60">
+					</div>
+
+					<div class="box-text">
+						<h4>Caesar Salad</h4>
+						<p> A classic salad made with romaine lettuce</p>
+						<span>$32</span>
+						<a href="#" class="btn">Add to cart</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="box">
+				<div class="box-content">
+					<div class="box-img">
+						<img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHBhc3RhfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60">
+					</div>
+
+					<div class="box-text">
+						<h4>Sam Crow</h4>
+						<p> A classic salad made with romaine lettuce</p>
+						<span>$32</span>
+						<a href="#" class="btn">Add to cart</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="box">
+				<div class="box-content">
+					<div class="box-img">
+						<img src="https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c3RlYWt8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60">
+					</div>
+
+					<div class="box-text">
+						<h4>Sushi</h4>
+						<p> A classic salad made with romaine lettuce</p>
+						<span>$32</span>
+						<a href="#" class="btn">Add to cart</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="box">
+				<div class="box-content">
+					<div class="box-img">
+						<img src="https://images.unsplash.com/photo-1542528180-a1208c5169a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzl8fGZvb2QlMjBtZW51fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60">
+					</div>
+
+					<div class="box-text">
+						<h4>Margherita Pizza</h4>
+						<p>A traditional Italian pizza topped with tomato sauce.</p>
+						<span>$32</span>
+						<a href="#" class="btn">Add to cart</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+<!-- 
+<section class="banner">
+	<div class="row-banner">
+		<div class="content">
+			<span>double cheese</span>
+			<h3>burger</h3>
+			<p>with cococola and fries</p>
+			<a href="#" class="btn">order now</a>
+		</div>
+	</div>
+
+	<div class="grid-banner">
+		<div class="grid">
+			<div class="content">
+				<span>special offer</span>
+				<h3>upto 50% off</h3>
+				<a href="#" class="btn">order now</a>
+			</div>
+			<img src="https://images.unsplash.com/photo-1550547660-d9450f859349?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8ZG91YmxlJTIwY2hlZXNlJTIwYnVyZ2VyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="">
+		</div>
+
+		
+			<div class="grid center">
+				<div class="content">
+					<span>special offer</span>
+					<h3>upto 25% off</h3>
+					<a href="#" class="btn">order now</a>
+				</div>
+				<img src="https://images.unsplash.com/photo-1598679253544-2c97992403ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGZyeXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+			</div>
+
+			<div class="grid">
+				<div class="content">
+					<span>limited offer</span>
+					<h3> 100% cashback</h3>
+					<a href="#" class="btn">order now</a>
+				</div>
+				<img src="https://plus.unsplash.com/premium_photo-1683892041696-71c87c1858be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGZvb2R8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="">
+			</div>
+		
+
+	</div>
+</section> -->
+
+
+	  <div class="testimonials" id="review">
+		<div class="inner">
+			<h2 style="color: red;">Customers Review</h2><br>
+			<h1>WHAT THEY SAY</h1>
+			<div class="border"></div>
+
+			<div class="row">
+
+
+				<div class="col">
+					<div class="testimonial">
+						<img src="https://i.pinimg.com/236x/8c/d4/4d/8cd44d3a81d9143d274d1d305f0e4d90.jpg" alt="">
+						<div class="name">Jackson</div>
+						<div class="stars">
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+						</div>
+						<p>
+							I recently had the pleasure of dining at The Spice Garden, and it was an absolute delight! The restaurant offers a wide range of flavorful Indian dishes that cater to various taste preferences.
+						</p>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="testimonial">
+						<img src="https://i.pinimg.com/236x/42/4c/b6/424cb61224b55fefeddca9f9a4b0da55.jpg" alt="">
+						<div class="name">tim david</div>
+						<div class="stars">
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="far fa-star"></i>
+						</div>
+						<p>
+							I stumbled upon Taco Fiesta food truck during my visit to Los Angeles, and it turned out to be a hidden gem! The truck serves mouthwatering Mexican street tacos that are simply outstanding.
+						</p>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="testimonial">
+						<img src="https://i.pinimg.com/236x/b4/05/46/b4054640f3dea592bfa1dc5957fc6d6d.jpg" alt="">
+						<div class="name">thomas paul</div>
+						<div class="stars">
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="far fa-star"></i>
+							<i class="far fa-star"></i>
+						</div>
+						<p>
+							I recently dined at The Bistro House, and my experience was average overall. The restaurant had a decent atmosphere, but nothing particularly stood out in terms of decor or ambiance.
+						</p>
+					</div>
+				</div>
+
+				
+				
+			</div>
+		</div>
+	  </div>
+
+
+
+	
+
+	  <section class="order" id="order">
+		<div class="home-text">
+			<h3 style="text-align: center;font-size: 44px;">Order Now</h3><br><br>				
+		</div>
+
+		<div class="icons-container">
+
+			<div class="icons">
+				<img src="data:image/png;base64,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" alt="">
+				<h3>7:00am to 10:30pm</h3>
+			</div>
+
+			<div class="icons">
+				<img src="data:image/png;base64,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" alt="">
+				<h3>+0491 22334</h3>
+			</div>
+
+			<div class="icons">
+				<img src="data:image/png;base64,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" alt="">
+				<h3>Kochi , india - 674833</h3>
+			</div>
+
+		</div>
+
+		<div class="row">
+			<div class="image">
+				<img src="https://images.unsplash.com/photo-1507914372368-b2b085b925a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8d2FpdGVyJTIwaGFwcHl8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="">
+			</div>
+			<form action="">
+				<div class="inputBox">
+					<input type="text" placeholder="name">
+					<input type="email" placeholder="email">
+				</div>
+
+				<div class="inputBox">
+					<input type="number" placeholder="number">
+					<input type="email" placeholder="food name">
+				</div>
+
+				<textarea placeholder="address" id="" cols="30" rows="10"></textarea>
+				<input type="submit" value="order now" class="btn">
+			</form>
+		</div>
+</section>
+
+
+
+<section class="contact" id="contact">
+	<div class="contact-box">
+		<h3>Foodies</h3>
+		<h5>Connect With Us</h5>
+		<div class="social">
+			<a href="#"><i class='bx bxl-facebook' ></i></a>
+			<a href="#"><i class='bx bxl-instagram-alt' ></i></a>
+			<a href="#"><i class='bx bxl-twitter' ></i></a>
+		</div>
+	</div>
+
+	<div class="contact-box">
+		<h3>Menu Links</h3>
+		<li><a href="#home" class="active">Home</a></li>
+		<li><a href="#about">About Us</a></li>
+		<li><a href="#menu">Menu</a></li>
+		<li><a href="#review">Review</a></li>
+		<!-- <!-- <li><a href="#blog">Blog</a></li> -->
+		<li><a href="#contact">Contact</a></li>
+	</div>
+
+	<div class="contact-box">
+		<h3>Our Foods</h3>
+		<li><a href="#menu">Pizza</a></li>
+		<li><a href="#menu">Indian Burger</a></li>
+		<li><a href="#menu">Beef Burger</a></li>
+		<li><a href="#menu">Toa Heftiba</a></li>
+		<li><a href="#menu">Shevtsova</a></li>
+	</div>
+
+	<div class="contact-box address">
+		<h3>Conatct</h3>
+		<i class='bx bxs-map' ><span>1st Floor - Thapasaya Building Infopark</span><br><span>&nbsp;&nbsp; Kakkanad, Cochin</span></i>
+		<i class='bx bxs-envelope' ><span>info@altostechnologies.in</span></i>
+		<i class='bx bxs-phone' ><span>+91 9746632202</span></i>
+	</div>
+
+</section>
+
+<div class="end-text">
+	<p>© altostechnologies. All Rights Reserved.</p>
+</div>
+
+
+
+
+		</div>
+	</div>
+
+	</section>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
     <script>
-        var swiper = new Swiper(".home-slider", {
-          spaceBetween: 30,
+        
+const header = document.querySelector("header");
+
+window.addEventListener ("scroll", function() {
+	header.classList.toggle ("sticky", window.scrollY > 0);
+});
+
+let menu = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
+
+menu.onclick = () => {
+	menu.classList.toggle('bx-x');
+	navbar.classList.toggle('open');
+};
+
+window.onscroll = () => {
+	menu.classList.remove('bx-x');
+	navbar.classList.remove('open');
+};
+    </script>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+	<script>
+		var swiper = new Swiper('#swiper-container', {
+		  slidesPerView: 'auto',
+		  spaceBetween: 20,
+		  loop: true,
+		  autoplay: {
+			delay: 3000,
+			disableOnInteraction: false
+		  }
+		});
+	  
+	  </script>
+	<!-- <script>
+        var swiper = new Swiper(".review-slider", {
+          spaceBetween: 20,
           centeredSlides: true,
           autoplay: {
             delay: 7500,
             disableOnInteraction: false,
           },
-          pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-          },
         loop:true,
+		breakpoints:{
+			0: {
+				slidesPerView: 1,
+			},
+			640: {
+				slidesPerView: 2,
+			},
+			
+			768: {
+				slidesPerView: 2,
+			},
+			1024: {
+				slidesPerView: 3,
+			},
+		},
         });
-      </script>
+      </script> -->
+
+	  
+
 </body>
 </html>
